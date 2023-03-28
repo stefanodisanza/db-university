@@ -19,3 +19,6 @@ SELECT d.name AS Degree FROM degrees d JOIN departments dp ON d.department_id = 
 
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
 SELECT c.name AS Course FROM courses c JOIN course_teacher ct ON c.id = ct.course_id WHERE ct.teacher_id = 44;
+
+4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
+SELECT s.surname, s.name, d.name AS Degree, dp.name AS Department FROM students s JOIN degrees d ON s.degree_id = d.id JOIN departments dp ON d.department_id = dp.id ORDER BY s.surname, s.name;
