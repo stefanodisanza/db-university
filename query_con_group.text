@@ -6,3 +6,6 @@ SELECT office_address, COUNT(*) AS Teachers FROM teachers GROUP BY office_addres
 
 3. Calcolare la media dei voti di ogni appello d'esame
 SELECT exam_id, AVG(vote) AS Average_Vote FROM exam_student GROUP BY exam_id;
+
+4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+SELECT d.name, COUNT(*) AS Degrees FROM departments d JOIN degrees dg ON d.id = dg.department_id GROUP BY d.id;
